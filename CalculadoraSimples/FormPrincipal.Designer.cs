@@ -80,7 +80,7 @@ namespace CalculadoraSimples
             this.btsoma.TabIndex = 5;
             this.btsoma.Text = "+";
             this.btsoma.UseVisualStyleBackColor = false;
-            this.btsoma.Click += new System.EventHandler(this.btsoma_Click);
+            this.btsoma.Click += new System.EventHandler(this.btOperacao_Click);
             // 
             // btsubtracao
             // 
@@ -93,7 +93,7 @@ namespace CalculadoraSimples
             this.btsubtracao.TabIndex = 6;
             this.btsubtracao.Text = "-";
             this.btsubtracao.UseVisualStyleBackColor = false;
-            this.btsubtracao.Click += new System.EventHandler(this.btsubtracao_Click);
+            this.btsubtracao.Click += new System.EventHandler(this.btOperacao_Click);
             // 
             // btmultiplicacao
             // 
@@ -106,7 +106,7 @@ namespace CalculadoraSimples
             this.btmultiplicacao.TabIndex = 7;
             this.btmultiplicacao.Text = "X";
             this.btmultiplicacao.UseVisualStyleBackColor = false;
-            this.btmultiplicacao.Click += new System.EventHandler(this.btmultiplicacao_Click);
+            this.btmultiplicacao.Click += new System.EventHandler(this.btOperacao_Click);
             // 
             // btdivisao
             // 
@@ -119,7 +119,7 @@ namespace CalculadoraSimples
             this.btdivisao.TabIndex = 8;
             this.btdivisao.Text = "÷";
             this.btdivisao.UseVisualStyleBackColor = false;
-            this.btdivisao.Click += new System.EventHandler(this.btdivisao_Click);
+            this.btdivisao.Click += new System.EventHandler(this.btOperacao_Click);
             // 
             // lbresultado
             // 

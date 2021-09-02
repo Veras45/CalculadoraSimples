@@ -17,115 +17,43 @@ namespace CalculadoraSimples
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbresultado_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lbresultado_Click_1(object sender, EventArgs e)
         {
-            
+
 
         }
-
-        private void btsoma_Click(object sender, EventArgs e)
+        private void btOperacao_Click(object sender, EventArgs e)
         {
-            string va, vb;
-            double vaD, vbD;
-            va = txtValorA.Text;
-            vb = txtValorB.Text;
-
-
-
             try
             {
-                vaD = double.Parse(va);
-                vbD = double.Parse(vb);
-                lbresultado.Text = (vaD + vbD).ToString();
-                
 
+                Button bt = (Button)sender;
+                string va, vb;
+
+                va = txtValorA.Text;
+                vb = txtValorB.Text;
+
+                matematica mat = new matematica(va, vb);
+
+                switch (bt.Name)
+                {
+                    case "btsoma":
+                        lbresultado.Text = mat.soma().ToString();
+                        break;
+                    case "btsubtracao":
+                        lbresultado.Text = mat.subtracao().ToString();
+                        break;
+                    case "btmultiplicacao":
+                        lbresultado.Text = mat.multiplicacao().ToString();
+                        break;
+                    case "btdivisao":
+                        lbresultado.Text = mat.divisao().ToString();
+                        break;
+                }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                lbresultado.Text = "Nao foi digitado numeros em um dos campos";
-
-            }
-        }
-
-        private void btsubtracao_Click(object sender, EventArgs e)
-        {
-            string va, vb;
-            double vaD, vbD;
-            va = txtValorA.Text;
-            vb = txtValorB.Text;
-
-
-
-            try
-            {
-                vaD = double.Parse(va);
-                vbD = double.Parse(vb);
-                lbresultado.Text = (vaD - vbD).ToString();
-
-            }
-            catch (Exception ex)
-            {
-                lbresultado.Text = "Nao foi digitado numeros em um dos campos";
-
-            }
-        }
-
-        private void btmultiplicacao_Click(object sender, EventArgs e)
-        {
-            string va, vb;
-            double vaD, vbD;
-            va = txtValorA.Text;
-            vb = txtValorB.Text;
-
-
-
-            try
-            {
-                vaD = double.Parse(va);
-                vbD = double.Parse(vb);
-                lbresultado.Text = (vaD * vbD).ToString();
-                
-
-            }
-            catch (Exception ex)
-            {
-                lbresultado.Text = "Nao foi digitado numeros em um dos campos";
-
-            }
-        }
-
-        private void btdivisao_Click(object sender, EventArgs e)
-        {
-            string va, vb;
-            double vaD, vbD;
-            va = txtValorA.Text;
-            vb = txtValorB.Text;
-
-
-
-            try
-            {
-                vaD = double.Parse(va);
-                vbD = double.Parse(vb);
-               
-                lbresultado.Text = (vaD / vbD).ToString();
-               
-
-            }
-            catch (Exception ex)
-            {
-                lbresultado.Text = "Nao foi digitado numeros em um dos campos, ou foi digitado 0";  
-
+                lbresultado.Text = ex.Message;
             }
         }
 
@@ -135,6 +63,6 @@ namespace CalculadoraSimples
             txtValorB.Clear();
             lbresultado.Text = "---";
 
-            }
+        }
     }
 }
